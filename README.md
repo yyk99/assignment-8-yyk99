@@ -8,7 +8,8 @@ It also contains instructions related to modifying your buildroot project to use
 
 Rebuild w/o checking-in
 
-	AESD_ASSIGNMENTS_OVERRIDE_SRCDIR=/home/yyk/src/assignment-3-yyk99 make aesd-assignments-rebuild
+	AESD_ASSIGNMENTS_OVERRIDE_SRCDIR=/home/yyk/src/assignment-3-yyk99 make -C buildroot aesd-assignments-rebuild
+	AESD_CHAR_DRIVER_OVERRIDE_SRCDIR=/home/yyk/src/assignment-3-yyk99 make -C buildroot aesd-char-driver-rebuild
 
 Make sure master is pushed to origin/master
 

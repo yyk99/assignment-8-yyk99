@@ -13,6 +13,7 @@ if [ $# -ne 1 ]; then
 fi
 
 set -e
+
 # Group: since distributions do it differently, look for wheel or use staff
 # These are groups which correspond to system administrator accounts
 if grep -q '^staff:' /etc/group; then
@@ -22,7 +23,7 @@ else
 fi
 
 echo "Load our module, exit on failure"
-modprobe $module $* || exit 1
+modprobe $module
 echo "Get the major number (allocated with allocate_chrdev_region) from /proc/devices"
 major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
 if [ ! -z ${major} ]; then
