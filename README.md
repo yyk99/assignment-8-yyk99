@@ -14,3 +14,11 @@ Rebuild w/o checking-in
 Make sure master is pushed to origin/master
 
 	git push -u origin master
+
+Fix fakeroot issue
+
+	# Clean fakeroot package
+	make host-fakeroot-dirclean
+
+	# Rebuild fakeroot
+	make host-fakeroot
